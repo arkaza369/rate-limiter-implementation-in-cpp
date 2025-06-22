@@ -85,7 +85,7 @@ void testTokenBucket(TokenBucketRateLimiter& limiter, const string& userId, int 
 
 
 int main() {
-    const std::string userId = "user123";
+    const std::string userId = "User_Arkaza";
     const int numThreads = 15;
 
     // === Token Bucket: 10 capacity, 5 tokens per second
