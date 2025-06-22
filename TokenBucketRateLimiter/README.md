@@ -33,7 +33,9 @@ Using std::shared_ptr ensures that:
 
 If we stored TokenBucket by value, like this:
 
+```cpp
 std::unordered_map<std::string, TokenBucket> userBuckets;
+```
 
 - Every time we insert or access a bucket, we'd be copying it.
 
@@ -63,11 +65,13 @@ No need to manually new or delete anything. shared_ptr takes care of:
 
 ### push_back()
 
-##### std::vector<std::thread> threads;
+```cpp
+std::vector<std::thread> threads;
 
-##### std::thread t1(myFunc); // construct thread first
+std::thread t1(myFunc); // construct thread first
 
-##### threads.push_back(t1); // copy or move t1 into the vector
+threads.push_back(t1); // copy or move t1 into the vector
+```
 
 We create the object outside the vector (t1), and then push it in.
 This might require copying or moving the object.
@@ -75,9 +79,11 @@ With std::thread, which is non-copyable, only move works — still an extra step
 
 ### emplace_back()
 
-##### std::vector<std::thread> threads;
+```cpp
+std::vector<std::thread> threads;
 
-##### threads.emplace*back(myFunc); // construct the thread \_directly inside the vector*
+threads.emplace*back(myFunc); // construct the thread \_directly inside the vector*
+```
 
 We skip creating the thread outside.
 The std::thread is constructed directly in-place, in the vector's memory.
