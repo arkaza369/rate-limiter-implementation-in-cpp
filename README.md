@@ -35,9 +35,9 @@ If we stored TokenBucket by value, like this:
 
 std::unordered_map<std::string, TokenBucket> userBuckets;
 
--Every time we insert or access a bucket, we'd be copying it.
+- Every time we insert or access a bucket, we'd be copying it.
 
--That creates duplicate state — very bad in a rate limiter, where shared state is essential.
+- That creates duplicate state — very bad in a rate limiter, where shared state is essential.
 
 - shared_ptr avoids that — we store and share a single instance per user.
 
