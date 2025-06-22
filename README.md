@@ -21,13 +21,13 @@ This allows bursts of traffic up to the capacity while enforcing a steady averag
 
 ### 1. Shared ownership
 
-#### Multiple parts of our code may need access to the same TokenBucket object — especially across threads.
+- Multiple parts of our code may need access to the same TokenBucket object — especially across threads.
 
 Using std::shared_ptr ensures that:
 
-##### The TokenBucket stays alive as long as at least one thread or function still needs it.
+-- The TokenBucket stays alive as long as at least one thread or function still needs it.
 
-##### The memory is automatically freed when no one is using it anymore.
+-- The memory is automatically freed when no one is using it anymore.
 
 ### 2. Avoid object slicing / duplication
 
